@@ -1190,7 +1190,113 @@ const S0506={
   }
 };
 
-function loadStore(){try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r);}catch(e){}return[S0415,S0416,S0417,S0421,S0427,S0429,S0506,S0511];}
+// ── 2026-05-15 스냅샷 (최신 · 3계좌 · 30종목)
+const S0515={
+  id:'20260515_0842',date:'2026-05-15',time:'08:42',
+  memo:'SNAP-20260515-0842 · A-신한(3종목) / B-카카오(13종목) / C-토스(14종목) · 환율 ~1,310원(A-신한 해외) · 코스피 7,900대 · 나스닥 26,402 · 필라델피아반도체 +5.51%',
+  accounts:[
+    {id:'A-신한',label:'신한투자증권',sub:'이미지1+2 · 3종목',color:'#60a5fa',count:3,cur:37435020,buy:30906608},
+    {id:'B-카카오',label:'카카오페이증권',sub:'이미지2 · 13종목',color:'#facc15',count:13,cur:74618955,buy:58267073},
+    {id:'C-토스',label:'토스증권',sub:'이미지4 · 14종목',color:'#34d399',count:14,cur:89400852,buy:68862463},
+  ],
+  sectors:[
+    {name:'금·원자재',   cur:19343325,buy:14261300,pnl:5082025,color:'#c9a84c'},
+    {name:'반도체·기술', cur:41375557,buy:28391162,pnl:12984395,color:'#60a5fa'},
+    {name:'국내 ETF',    cur:33009730,buy:25207698,pnl:7802032,color:'#22d3ee'},
+    {name:'반도체 ETF',  cur:34042864,buy:24327115,pnl:9715749,color:'#818cf8'},
+    {name:'미국시장ETF', cur:20829000,buy:18561325,pnl:2267675,color:'#4ade80'},
+    {name:'커버드콜 ETF',cur:16766295,buy:15963234,pnl:803061,color:'#6b7280'},
+    {name:'빅테크',      cur:15509389,buy:13822852,pnl:1686537,color:'#34d399'},
+    {name:'우주·혁신ETF',cur:4169385,buy:3488440,pnl:680945,color:'#a78bfa'},
+    {name:'리츠·부동산', cur:5098291,buy:4673573,pnl:424718,color:'#fb923c'},
+    {name:'AI 인프라·데이터센터',cur:10218882,buy:9011535,pnl:1207347,color:'#38bdf8'},
+    {name:'방산·기타',   cur:4082270,buy:3519329,pnl:562941,color:'#94a3b8'},
+  ],
+  themes:[
+    {sector:'금·원자재',buy:14261300,cur:19343325,pnl:5082025,pp:35.6,stocks:[
+      {name:'ACE KRX금현물 (C-토스)',qty:'203',acc:'C-토스',buy:4326857,cur:6301120,pnl:1974263,pp:45.6},
+      {name:'GLD (C-토스)',qty:'15',acc:'C-토스',buy:6929044,cur:9578806,pnl:2649762,pp:38.2},
+      {name:'IAUM (C-토스)',qty:'50',acc:'C-토스',buy:3005399,cur:3463399,pnl:458000,pp:15.2},
+    ]},
+    {sector:'반도체·기술',buy:28391162,cur:41375557,pnl:12984395,pp:45.7,stocks:[
+      {name:'삼성전자 (B-카카오)',qty:'53',acc:'B-카카오',buy:10392408,cur:15555500,pnl:5163092,pp:49.7},
+      {name:'SK하이닉스 (B-카카오)',qty:'7',acc:'B-카카오',buy:8015625,cur:13776000,pnl:5760375,pp:71.9},
+      {name:'NVDA (A-신한)',qty:'39',acc:'A-신한',buy:9370129,cur:12044057,pnl:2673928,pp:28.5},
+      {name:'NVDA (C-토스)',qty:'12',acc:'C-토스',buy:4123246,cur:4268211,pnl:144965,pp:3.5},
+    ]},
+    {sector:'국내 ETF',buy:25207698,cur:33009730,pnl:7802032,pp:30.9,stocks:[
+      {name:'KODEX 200 (B-카카오)',qty:'146',acc:'B-카카오',buy:13489367,cur:18228830,pnl:4739463,pp:35.1},
+      {name:'KODEX 200 (C-토스)',qty:'42',acc:'C-토스',buy:1898797,cur:5243910,pnl:3345113,pp:176.1},
+      {name:'KODEX 코스닥150 (A-신한)',qty:'229',acc:'A-신한',buy:4875620,cur:4559390,pnl:-316230,pp:-6.5},
+      {name:'KODEX 코스닥150 (B-카카오)',qty:'250',acc:'B-카카오',buy:4944874,cur:4977500,pnl:32626,pp:0.7},
+    ]},
+    {sector:'반도체 ETF',buy:24327115,cur:34042864,pnl:9715749,pp:39.9,stocks:[
+      {name:'SMH (C-토스)',qty:'13',acc:'C-토스',buy:6593310,cur:11253812,pnl:4660502,pp:70.6},
+      {name:'SOXX (C-토스)',qty:'10',acc:'C-토스',buy:5379911,cur:7938981,pnl:2559070,pp:47.5},
+      {name:'DRAM (C-토스)',qty:'85',acc:'C-토스',buy:6353894,cur:6851071,pnl:497177,pp:7.8},
+      {name:'KODEX 2차전지산업 (B-카카오)',qty:'13',acc:'B-카카오',buy:280215,cur:267865,pnl:-12350,pp:-4.4},
+    ]},
+    {sector:'미국시장 ETF',buy:18561325,cur:20829000,pnl:2267675,pp:12.2,stocks:[
+      {name:'SCHD (A-신한)',qty:'500',acc:'A-신한',buy:18561325,cur:20829000,pnl:2267675,pp:12.2},
+    ]},
+    {sector:'커버드콜 ETF',buy:15963234,cur:16766295,pnl:803061,pp:5.0,stocks:[
+      {name:'KODEX 금융고배당TOP10타깃위클리커버드콜 (B-카카오)',qty:'774',acc:'B-카카오',buy:10298829,cur:9632430,pnl:-666399,pp:-6.5},
+      {name:'KODEX 200타깃위클리커버드콜 (B-카카오)',qty:'291',acc:'B-카카오',buy:5664405,cur:7133865,pnl:1469460,pp:25.9},
+    ]},
+    {sector:'빅테크',buy:13822852,cur:15509389,pnl:1686537,pp:12.2,stocks:[
+      {name:'테슬라 (C-토스)',qty:'18',acc:'C-토스',buy:10310012,cur:11915408,pnl:1605396,pp:15.6},
+      {name:'알파벳A (C-토스)',qty:'6',acc:'C-토스',buy:3512840,cur:3593981,pnl:81141,pp:2.3},
+    ]},
+    {sector:'우주·혁신 ETF',buy:3488440,cur:4169385,pnl:680945,pp:19.5,stocks:[
+      {name:'ARKX (C-토스)',qty:'79',acc:'C-토스',buy:3488440,cur:4169385,pnl:680945,pp:19.5},
+    ]},
+    {sector:'리츠·부동산',buy:4673573,cur:5098291,pnl:424718,pp:9.1,stocks:[
+      {name:'리얼티 인컴 (C-토스)',qty:'55',acc:'C-토스',buy:4673573,cur:5098291,pnl:424718,pp:9.1},
+    ]},
+    {sector:'AI 인프라·데이터센터',buy:9011535,cur:10218882,pnl:1207347,pp:13.4,stocks:[
+      {name:'DTCR (C-토스)',qty:'178',acc:'C-토스',buy:7023663,cur:8281897,pnl:1258234,pp:17.9},
+      {name:'KODEX 미국AI전력핵심인프라 (B-카카오)',qty:'35',acc:'B-카카오',buy:959430,cur:973000,pnl:13570,pp:1.4},
+      {name:'KODEX AI전력핵심설비 (B-카카오)',qty:'17',acc:'B-카카오',buy:987599,cur:963985,pnl:-23614,pp:-2.4},
+    ]},
+    {sector:'방산·기타',buy:3519329,cur:4082270,pnl:562941,pp:16.0,stocks:[
+      {name:'SHLD (C-토스)',qty:'15',acc:'C-토스',buy:1243477,cur:1443145,pnl:199668,pp:16.1},
+      {name:'SOL 조선TOP3플러스 (B-카카오)',qty:'52',acc:'B-카카오',buy:2143409,cur:2028000,pnl:-115409,pp:-5.4},
+      {name:'TIGER K방산&우주 (B-카카오)',qty:'10',acc:'B-카카오',buy:484655,cur:466900,pnl:-17755,pp:-3.7},
+      {name:'KODEX 방산TOP10 (B-카카오)',qty:'20',acc:'B-카카오',buy:291320,cur:279200,pnl:-12120,pp:-4.2},
+      {name:'KODEX 미국우주항공 (B-카카오)',qty:'27',acc:'B-카카오',buy:314925,cur:335880,pnl:20955,pp:6.7},
+    ]},
+  ],
+  advice:{
+    market:'AI·반도체 불장 · 코스피 7,900대 · 지정학 리스크 혼재',
+    context:'USD/KRW ~1,490원 · 코스피 7,901 (+0.73%) · 나스닥 26,402 (+1.20%) · S&P500 7,444 · WTI $95.42 · 필라델피아반도체 +5.51% · 미-중 정상회담 · 워시 연준의장 취임',
+    consensus:[
+      {text:'KODEX 코스닥150 (A-신한+B-카카오) 손실 포지션 정리 여부 결정',color:'#f87171',type:'만장일치 검토'},
+      {text:'반도체 ETF 집중도 모니터링 (포트폴리오 ~32%)',color:'#facc15',type:'공통'},
+      {text:'금 ETF 3종 → 2종 통합 지속 권고 (IAUM 포함)',color:'#facc15',type:'만장일치'},
+    ],
+    personas:[
+      {name:'Warren Buffett',role:'가치투자 · 장기보유',confidence:72,
+       avatar:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Warren_Buffett_KU_Visit.jpg/220px-Warren_Buffett_KU_Visit.jpg',
+       summary:'SCHD는 고품질 배당주의 집합체로, 어떤 경제 사이클에서도 투자자를 보호하는 든든한 방어막이다. 현재 +12.2% 수익률은 시작에 불과하다. 다만 B-카카오의 13개 ETF는 실제로 무엇을 사는지 알고 있는가? ETF는 포장지일 뿐이다. KODEX 코스닥150은 A-신한 -6.5%, B-카카오 +0.7% — 합산 손실이다. 나라면 손실 ETF를 정리하고 삼성전자와 SK하이닉스처럼 이해할 수 있는 우량 기업을 더 담겠다.',
+       tags:[{text:'SCHD 유지',type:'hold'},{text:'KODEX코스닥150 정리 검토',type:'sell'},{text:'삼성·하이닉스 유지',type:'hold'},{text:'ETF 과다 경계',type:'warn'}]},
+      {name:'Ray Dalio',role:'매크로 · 리스크 패리티',confidence:78,
+       avatar:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ray_Dalio_2019.jpg/220px-Ray_Dalio_2019.jpg',
+       summary:'총평가 2억 145만원. 반도체 집중도가 너무 높다. NVDA(A+C), SMH, SOXX, DRAM, SK하이닉스, 삼성전자 — 모두 같은 방향으로 움직인다. 반도체 관련 자산이 포트폴리오의 약 32%다. 반도체 경기 하강 시 단 하나의 충격으로 전체가 흔들릴 수 있다. 금 포지션(금·원자재 9.6%)은 합리적 수준 — 유지하라. 채권 또는 단기자산이 전혀 없다는 점이 리스크다.',
+       tags:[{text:'반도체 집중도 32% 경고',type:'warn'},{text:'금 비중 유지',type:'hold'},{text:'채권/단기자산 편입',type:'buy'},{text:'DTCR AI인프라 긍정',type:'hold'}]},
+      {name:'Cathie Wood',role:'파괴적 혁신 · 성장주',confidence:85,
+       avatar:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Cathie_Wood_at_AI_for_Good_2023.jpg/220px-Cathie_Wood_at_AI_for_Good_2023.jpg',
+       summary:'혁신의 황금기가 이 포트폴리오에서 꽃피고 있다! NVDA +28.5%, SMH +70.6%, SOXX +47.5% — AI 인프라 투자 사이클이 본격화됐다. DTCR 178주(+17.9%)는 Global X Data Center & Digital Infrastructure ETF로 AI가 필요로 하는 물리적 기반을 담당한다. DRAM ETF 85주 편입도 탁월하다 — HBM 수요는 5년간 연평균 40% 이상 성장할 것이다. 테슬라 18주도 자율주행 실현 시 AI 응용의 최대 수혜주가 될 것이다.',
+       tags:[{text:'DTCR AI인프라 적극 유지',type:'hold'},{text:'DRAM ETF 긍정',type:'hold'},{text:'SMH·SOXX 확대',type:'buy'},{text:'테슬라 장기 긍정',type:'hold'}]},
+    ],
+    actions:[
+      {color:'r',timing:'즉시 (이번 주)',title:'KODEX 코스닥150 (A-신한 229주·B-카카오 250주) 손실 포지션 정리 결정',desc:'A-신한 -6.5% (-316,230원), B-카카오 +0.7% (+32,626원). 합산 손실 -283,604원. 3인 중 Buffett·Dalio 정리 권고. 청산금 → SCHD 또는 삼성전자 추가 매수 검토.'},
+      {color:'y',timing:'단기 (1개월)',title:'반도체 집중도 점검 / 커버드콜 ETF KODEX 금융고배당 774주 전략 재검토',desc:'NVDA+SMH+SOXX+DRAM+SK하이닉스+삼성전자 합산 ~32%. KODEX 금융고배당TOP10 774주 현재 -6.5% 진행 중 — 커버드콜 수익 상한 구조 재검토.'},
+      {color:'g',timing:'중기 (3개월)',title:'채권/단기자산 5~10% 편입 / 금 ETF 3종 → 2종 통합',desc:'Dalio 리스크 패리티 권고. IAUM 50주 정리 후 GLD+ACE KRX금현물 2종 체계 완성. 채권/단기자산으로 포트폴리오 완충재 마련.'},
+    ]
+  }
+};
+
+function loadStore(){try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r);}catch(e){}return[S0415,S0416,S0417,S0421,S0427,S0429,S0506,S0511,S0515];}
 function saveStore(d){try{localStorage.setItem(KEY,JSON.stringify(d));}catch(e){}}
 
 let snaps=loadStore();
